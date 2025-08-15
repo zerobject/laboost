@@ -1,3 +1,14 @@
 {
-	"name": "Zerobject.Laboost.Runtime"
+  "name": "Zerobject.Laboost.Runtime",
+  "rootNamespace": "Zerobject.Laboost",
+  "references": [],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
 }

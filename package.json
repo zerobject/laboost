@@ -1,16 +1,16 @@
 {
-  "name": "jp.hadashikick.vcontainer",
-  "displayName": "VContainer",
-  "version": "1.17.0",
-  "unity": "2018.4",
-  "description": "The extra fast DI (Dependency Injection) for Unity",
+  "name": "com.zerobject.laboost",
+  "displayName": "Laboost",
+  "version": "0.1.1",
+  "unity": "6000.0",
+  "description": "The simple, fast and powerful dependency injection framework for Unity.",
   "keywords": [
     "DI",
     "Dependency Injection",
     "DI Container"
   ],
   "license": "MIT",
-  "documentationUrl": "https://vcontainer.hadashikick.jp/",
+  "documentationUrl": "https://github.com/zerobject/laboost/Documentation~/README_en.md",
   "changelogUrl": "https://github.com/zerobject/laboost/releases",
   "licensesUrl": "https://github.com/zerobject/laboost/blob/main/LICENSE"
 }
