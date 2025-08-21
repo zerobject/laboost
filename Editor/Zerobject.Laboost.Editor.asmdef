@@ -1,3 +1,18 @@
 {
-	"name": "Zerobject.Laboost.Editor"
+  "name": "Zerobject.Laboost.Editor",
+  "rootNamespace": "Zerobject.Laboost.Editor",
+  "references": [
+    "GUID:70c41c4468ac9f1429b258f8b7e1987a"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
 }

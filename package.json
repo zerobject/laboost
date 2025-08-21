@@ -2,7 +2,7 @@
   "name": "com.zerobject.laboost",
   "displayName": "Laboost",
   "version": "0.1.1",
-  "unity": "6000.0",
+  "unity": "6000.1",
   "description": "The simple, fast and powerful dependency injection framework for Unity.",
   "keywords": [
     "DI",
@@ -10,7 +10,7 @@
     "DI Container"
   ],
   "license": "MIT",
-  "documentationUrl": "https://github.com/zerobject/laboost/Documentation~/README_en.md",
+  "documentationUrl": "https://github.com/zerobject/laboost/Documentation~/README.md",
   "changelogUrl": "https://github.com/zerobject/laboost/releases",
   "licensesUrl": "https://github.com/zerobject/laboost/blob/main/LICENSE"
 }

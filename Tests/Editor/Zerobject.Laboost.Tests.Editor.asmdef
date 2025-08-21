@@ -1,0 +1,23 @@
+{
+  "name": "Zerobject.Laboost.Tests.Editor",
+  "rootNamespace": "Zerobject.Laboost.Tests.Editor",
+  "references": [
+    "GUID:0acc523941302664db1f4e527237feb3",
+    "GUID:27619889b8ba8c24980f49ee34dbb44a",
+    "GUID:6c969dff6a7f2fc41af60abbcc9a8238",
+    "GUID:70c41c4468ac9f1429b258f8b7e1987a",
+    "GUID:9f843d4b38153f04b9cee0502d568525",
+    "GUID:c0dd0d10738d4ad4a9de57c559d0ca1b"
+  ],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": true,
+  "precompiledReferences": [
+    "nunit.framework.dll"
+  ],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}

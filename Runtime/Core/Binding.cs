@@ -1,37 +1,31 @@
 ﻿using System;
-using JetBrains.Annotations;
-using Zerobject.Laboost.Core.Factories;
 
-namespace Zerobject.Laboost.Core
+namespace Zerobject.Laboost.Runtime.Core
 {
-    public struct Binding : IEquatable<Binding>
+    public readonly struct Binding
     {
-        public Binding(IFactory factory, LifetimeType lifetimeType)
+        internal readonly Type   ContractType;
+        internal readonly Type   ImplType;
+        internal readonly string Id;
+        internal readonly object Factory;
+        internal readonly Scope  Scope;
+
+        public Binding(Type contractType)
         {
-            InstanceFactory = factory ?? throw new ArgumentNullException(nameof(factory));
-            Instance = null;
-            LifetimeType = lifetimeType;
+            ContractType = contractType;
+            ImplType     = null;
+            Id           = null;
+            Factory      = null;
+            Scope        = Scope.Transient;
         }
 
-        public IFactory InstanceFactory { get; }
-        [CanBeNull] public object Instance { get; set; }
-        public LifetimeType LifetimeType { get; }
-
-        public bool Equals(Binding other)
+        public Binding(Type contractType, Type implType, string id, object factory, Scope scope)
         {
-            return Equals(InstanceFactory, other.InstanceFactory)
-                   && Equals(Instance, other.Instance)
-                   && LifetimeType == other.LifetimeType;
-        }
-
-        public override bool Equals(object obj)
-        {
-            return obj is Binding other && Equals(other);
-        }
-
-        public override int GetHashCode()
-        {
-            return HashCode.Combine(InstanceFactory, Instance, (int)LifetimeType);
+            ContractType = contractType;
+            ImplType     = implType;
+            Id           = id;
+            Factory      = factory;
+            Scope        = scope;
         }
     }
 }
