@@ -1,9 +1,9 @@
 {
   "name": "com.zerobject.laboost",
   "displayName": "Laboost",
-  "version": "0.1.1",
-  "unity": "6000.1",
-  "description": "The simple, fast and powerful dependency injection framework for Unity.",
+  "version": "v0.1.0-alpha",
+  "unity": "2019.4",
+  "description": "Simple, fast and modular DI framework for Unity.",
   "keywords": [
     "DI",
     "Dependency Injection",
