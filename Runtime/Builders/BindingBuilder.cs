@@ -21,7 +21,7 @@ namespace Zerobject.Laboost.Runtime.Builders
             Container = container;
             ContractType = contractType;
             ImplType = null;
-            Id = null;
+            Id = string.Empty;
             Factory = null;
             Scope = Scope.Transient;
         }
