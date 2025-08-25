@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Reflection;
+
 using JetBrains.Annotations;
+
 using UnityEngine;
+
 using Zerobject.Laboost.Runtime.Attributes;
 using Zerobject.Laboost.Runtime.Builders;
 using Zerobject.Laboost.Runtime.Core;
@@ -164,7 +167,7 @@ Implementation type: {implType.Name}");
                 throw new BindingTypesConflictException(builder.ImplType, instanceType);
 
             var genFactoryType = typeof(InstanceFactory<>).MakeGenericType(instanceType);
-            builder.Factory  =   Activator.CreateInstance(genFactoryType, builder.Container, instance);
+            builder.Factory = Activator.CreateInstance(genFactoryType, builder.Container, instance);
             builder.ImplType ??= instanceType;
 
             builder.UpdateBinding();
@@ -275,32 +278,32 @@ Implementation type: {implType.Name}");
                     return binding.Factory.Create();
 
                 case Scope.Cached:
-                {
-                    if (container.CachedInstances.TryGetValue(key, out var cached))
-                        return cached;
-
-                    cached                         = binding.Factory.Create();
-                    container.CachedInstances[key] = cached;
-
-                    return cached;
-                }
-
-                case Scope.Single:
-                {
-                    if (bindingContainer.SingleInstances.TryGetValue(key, out var instance))
-                        return instance;
-
-                    instance = binding.Factory.Create();
-
-                    var c = bindingContainer;
-                    while (c != null)
                     {
-                        c.SingleInstances[key] = instance;
-                        c                      = c.Parent;
+                        if (container.CachedInstances.TryGetValue(key, out var cached))
+                            return cached;
+
+                        cached = binding.Factory.Create();
+                        container.CachedInstances[key] = cached;
+
+                        return cached;
                     }
 
-                    return instance;
-                }
+                case Scope.Single:
+                    {
+                        if (bindingContainer.SingleInstances.TryGetValue(key, out var instance))
+                            return instance;
+
+                        instance = binding.Factory.Create();
+
+                        var c = bindingContainer;
+                        while (c != null)
+                        {
+                            c.SingleInstances[key] = instance;
+                            c = c.Parent;
+                        }
+
+                        return instance;
+                    }
                 default:
                     throw new InvalidOperationException($"Неизвестный Scope: '{binding.Scope}'.");
             }
@@ -339,7 +342,8 @@ Implementation type: {implType.Name}");
                 }
                 catch (Exception)
                 {
-                    if (!injectAttr.Optional) throw;
+                    if (!injectAttr.Optional)
+                        throw;
                 }
             }
 
@@ -355,7 +359,8 @@ Implementation type: {implType.Name}");
                 }
                 catch (Exception)
                 {
-                    if (!injectAttr.Optional) throw;
+                    if (!injectAttr.Optional)
+                        throw;
                 }
             }
 

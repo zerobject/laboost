@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+
 using Zerobject.Laboost.Runtime.Core;
 
 namespace Zerobject.Laboost.Runtime.Installers
@@ -6,6 +7,8 @@ namespace Zerobject.Laboost.Runtime.Installers
     public abstract class ScriptableObjectInstallerBase : ScriptableObject, IInstaller
     {
         public Container Container { get; private set; }
+
+        public InstallerType Type => InstallerType.ScriptableObjectInstaller;
 
         public abstract void InstallBindings();
 
@@ -19,7 +22,7 @@ namespace Zerobject.Laboost.Runtime.Installers
     {
     }
 
-    public abstract class ScriptableObjectInstaller<TDerived> 
+    public abstract class ScriptableObjectInstaller<TDerived>
         : ScriptableObjectInstallerBase where TDerived : ScriptableObjectInstaller<TDerived>
     {
     }

@@ -7,6 +7,8 @@ namespace Zerobject.Laboost.Runtime.Installers
     {
         public Container Container { get; private set; }
 
+        public InstallerType Type => InstallerType.MonoInstaller;
+
         public abstract void InstallBindings();
 
         internal void SetContainer(Container newContainer)
