@@ -1,4 +1,5 @@
 ﻿using System;
+
 using Zerobject.Laboost.Runtime.Core;
 using Zerobject.Laboost.Runtime.Factories;
 
@@ -17,27 +18,30 @@ namespace Zerobject.Laboost.Runtime.Builders
 
         public BindingBuilder(Container container, Type contractType)
         {
-            Container    = container;
+            Container = container;
             ContractType = contractType;
-            ImplType     = null;
-            Id           = null;
-            Factory      = null;
-            Scope        = Scope.Transient;
+            ImplType = null;
+            Id = null;
+            Factory = null;
+            Scope = Scope.Transient;
         }
 
         internal void UpdateBinding()
         {
-            ValidateFactory();
+            ValidateBinding();
             m_CachedBinding = new(ContractType, ImplType, Id, Factory, Scope);
         }
 
         internal void FinalizeBinding()
         {
+            UpdateBinding();
             Container.Bindings[(ContractType, Id)] = m_CachedBinding;
         }
 
-        private void ValidateFactory()
+        private void ValidateBinding()
         {
+            ImplType ??= ContractType;
+
             if (Factory == null && ImplType != null && ImplType.GetConstructor(Type.EmptyTypes) != null)
             {
                 var genFactoryType = typeof(CtorFactory<>).MakeGenericType(ImplType);

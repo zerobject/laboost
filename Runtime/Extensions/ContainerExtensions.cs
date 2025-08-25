@@ -67,9 +67,6 @@ namespace Zerobject.Laboost.Runtime.Extensions
             var contractType = typeof(TContract);
             var implType     = instance.GetType();
 
-            Debug.Log(@$"Contract type: {contractType.Name}
-Implementation type: {implType.Name}");
-
             if (!contractType.IsAssignableFrom(implType))
                 throw new BindingTypesMismatchException(contractType, implType);
 
